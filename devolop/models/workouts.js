@@ -35,10 +35,32 @@ const workouts = new Schema({
         type: Number,
         allowNull: true},
     }],
-  
+},  
+  {
+  toObject: {
+    virtuals: true
+  },
+  toJSON: {
+    virtuals: true
+  }
 });
+workouts
+.virtual('totalDuration')
+.get(function () {
+  let sum = 0;
+  this.exercises.forEach(exercise => {
+    sum += exercise.duration;
+    
+  });
+  return sum;
+});
+
+  
 
 const  Workouts = mongoose.model("Workouts", workouts);
 
 
+
 module.exports = Workouts;
+
+

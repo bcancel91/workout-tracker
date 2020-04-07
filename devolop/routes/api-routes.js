@@ -40,39 +40,7 @@ router.get("/api/workouts", (req, res) => {
 
     })
    
-    router.get("/api/workouts/range",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
 
 
